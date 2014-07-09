@@ -1,0 +1,21 @@
+{
+  "name": "semjs",
+  "version": "0.0.0",
+  "authors": [
+    "Yosuke ONOUE <onoue@likr-lab.com>"
+  ],
+  "description": "Structural equation modeling tool for JavaScript",
+  "main": "sem.js",
+  "license": "MIT",
+  "homepage": "http://likr.github.io/semjs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}
