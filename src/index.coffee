@@ -1,2 +1,2 @@
 global.window.sem =
-  lu_decomposition: require './lu_decomposition'
+  linalg: require './linalg'
