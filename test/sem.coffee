@@ -146,6 +146,18 @@ describe 'totalEffect', ->
       [0   , 0   , 1   ]
     ]
 
+describe 'pathMatrix', ->
+  it 'should return path matrix', ->
+    alpha = [
+      [0, 1, 0.5]
+      [1, 2, 0.5]
+    ]
+    expect(sem.pathMatrix 3, alpha).to.be.eql [
+      [0  , 0.5, 0  ]
+      [0  , 0  , 0.5]
+      [0  , 0  , 0  ]
+    ]
+
 if window.mochaPhantomJS
   mochaPhantomJS.run()
 else
