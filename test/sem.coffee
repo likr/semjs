@@ -131,6 +131,20 @@ describe 'solver', ->
     requests[0].respond 200, header, JSON.stringify response
     return
 
+describe 'totalEffect', ->
+  it 'should return total effect of a', ->
+    a = [
+      [0  , 0.5, 0  ]
+      [0  , 0  , 0.5]
+      [0  , 0  , 0  ]
+    ]
+
+    t = sem.totalEffect a
+    expect(sem.totalEffect a).to.be.eql [
+      [1   , 0.5 , 0.25]
+      [0   , 1   , 0.5 ]
+      [0   , 0   , 1   ]
+    ]
 
 if window.mochaPhantomJS
   mochaPhantomJS.run()
