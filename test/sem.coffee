@@ -147,7 +147,7 @@ describe 'totalEffect', ->
     ]
 
 describe 'pathMatrix', ->
-  it 'should return path matrix', ->
+  it 'should convert path list to path matrix', ->
     alpha = [
       [0, 1, 0.5]
       [1, 2, 0.5]
@@ -157,6 +157,19 @@ describe 'pathMatrix', ->
       [0  , 0  , 0.5]
       [0  , 0  , 0  ]
     ]
+
+describe 'pathList', ->
+  it 'should convert path matrix to path list', ->
+    a = [
+      [0  , 0.5, 0  ]
+      [0  , 0  , 0.5]
+      [0  , 0  , 0  ]
+    ]
+    expect(sem.pathList a).to.be.eql [
+      [0, 1, 0.5]
+      [1, 2, 0.5]
+    ]
+
 
 if window.mochaPhantomJS
   mochaPhantomJS.run()
