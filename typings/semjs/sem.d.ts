@@ -20,7 +20,7 @@ declare module sem {
    * @param alpha  array of [i, j, a[i][j]]
    * @return path-matrix represented as a square matrix of order n
    */
-  function pathMatrix(n: number, alpha: number[][]): number[][];
+  function pathMatrix(n: number, alpha: [number, number, number][]): number[][];
 
   interface Solver {
     /**
@@ -31,12 +31,12 @@ declare module sem {
      * @param s covariance matrix of observable variables
      * @return promise object of server response
      */
-    (n: number, alpha: number[][], sigma: number[][], s: number[][]): JQueryXHR;
+    (n: number, alpha: [number, number][], sigma: number[][], s: number[][]): JQueryXHR;
 
     /**
      * Solver.solve is an alias of Solver().
      */
-    solve(n: number, alpha: number[][], sigma: number[][], s: number[][]): JQueryXHR;
+    solve(n: number, alpha: [number, number][], sigma: number[][], s: number[][]): JQueryXHR;
 
     /**
      * get server url.
