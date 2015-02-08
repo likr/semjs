@@ -1,8 +1,11 @@
 {
   "name": "semjs",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "directories": {
     "example": "example",
     "test": "test"
