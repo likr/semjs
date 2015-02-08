@@ -1,3 +1,5 @@
+sem = require '../'
+
 mocha.ui 'bdd'
 mocha.reporter 'html'
 

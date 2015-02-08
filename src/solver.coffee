@@ -1,3 +1,5 @@
+$ = require 'jquery'
+
 module.exports = ->
   url = 'http://hyperinfo.viz.media.kyoto-u.ac.jp/wsgi/websem'
 

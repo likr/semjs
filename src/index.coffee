@@ -1,4 +1,4 @@
-global.window.sem =
+module.exports =
   linalg: require './linalg'
   pathList: require './path-list'
   pathMatrix: require './path-matrix'

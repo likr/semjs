@@ -1,16 +1,22 @@
 module.exports = (grunt) ->
   grunt.initConfig
     browserify:
-      dist:
+      main:
         files:
-          'sem.js': ['src/index.js']
+          'sem.js': ['lib/index.js']
+        options:
+          browserifyOptions:
+            standalone: 'sem'
+      test:
+        files:
+          'test/sem-test.js': ['test/index.js']
     coffee:
-      src:
+      main:
         files: [
           expand: true
           cwd: 'src/'
           src: ['**/*.coffee']
-          dest: 'src'
+          dest: 'lib'
           ext: '.js'
         ]
       test:
@@ -26,18 +32,21 @@ module.exports = (grunt) ->
         reporter: 'list'
       all: ['test/**/*.html']
     watch:
-      src:
+      main:
         files: ['src/**/*.coffee']
-        tasks: ['compile:src', 'test']
+        tasks: ['build:main', 'test']
       test:
         files: ['test/**/*.coffee', 'test/**/*.html']
-        tasks: ['compile:test', 'test']
+        tasks: ['build:test', 'test']
 
     grunt.loadNpmTasks 'grunt-browserify'
     grunt.loadNpmTasks 'grunt-contrib-coffee'
     grunt.loadNpmTasks 'grunt-contrib-watch'
     grunt.loadNpmTasks 'grunt-mocha-phantomjs'
 
-    grunt.registerTask 'compile', ['coffee', 'browserify']
-    grunt.registerTask 'default', ['compile']
+    grunt.registerTask 'build', ['build:main', 'build:test']
+    grunt.registerTask 'build:main', ['coffee:main']
+    grunt.registerTask 'build:test', ['coffee:test', 'browserify:test']
+    grunt.registerTask 'default', ['build', 'test']
+    grunt.registerTask 'dist', ['build:main', 'browserify:main']
     grunt.registerTask 'test', ['mocha_phantomjs']

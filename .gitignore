@@ -1,6 +1,5 @@
 bower_components
 typings
 node_modules
-src/**/*.js
+lib
 test/**/*.js
-sem.js
