@@ -172,7 +172,10 @@
   module.exports = function() {
     var solver, url;
     url = 'http://hyperinfo.viz.media.kyoto-u.ac.jp/wsgi/websem';
-    solver = function(n, alpha, sigma, s) {
+    solver = function(n, alpha, sigma, s, sigmaFixed) {
+      if (sigmaFixed == null) {
+        sigmaFixed = [];
+      }
       return $.ajax({
         type: 'POST',
         url: url + '/sem',
@@ -180,6 +183,7 @@
           n: n,
           alpha: alpha,
           sigma: sigma,
+          sigmaFixed: sigmaFixed,
           S: s
         }),
         contentType: 'application/json'

@@ -3,7 +3,7 @@ $ = require 'jquery'
 module.exports = ->
   url = 'http://hyperinfo.viz.media.kyoto-u.ac.jp/wsgi/websem'
 
-  solver = (n, alpha, sigma, s) ->
+  solver = (n, alpha, sigma, s, sigmaFixed=[]) ->
     $.ajax
       type: 'POST'
       url: url + '/sem'
@@ -11,6 +11,7 @@ module.exports = ->
         n: n
         alpha: alpha
         sigma: sigma
+        sigmaFixed: sigmaFixed
         S: s
       contentType: 'application/json'
 

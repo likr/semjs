@@ -36,7 +36,7 @@ declare module sem {
     /**
      * Solver.solve is an alias of Solver().
      */
-    solve(n: number, alpha: [number, number][], sigma: number[][], s: number[][]): JQueryXHR;
+    solve(n: number, alpha: [number, number][], sigma: number[][], s: number[][], sigmaFixed?: [number, number, number][]): JQueryXHR;
 
     /**
      * get server url.
