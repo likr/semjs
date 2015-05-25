@@ -29,9 +29,10 @@ declare module sem {
      * @param alpha array of [i, j] represents path from variable j to variable i
      * @param sigma array of [i, j] represents covariance between variable i and variable j
      * @param s covariance matrix of observable variables
+     * @param sigmaFixed array of [i, j, val] represents fixed covariance between variable i and variable j to val
      * @return promise object of server response
      */
-    (n: number, alpha: [number, number][], sigma: number[][], s: number[][]): JQueryXHR;
+    (n: number, alpha: [number, number][], sigma: number[][], s: number[][], sigmaFixed?: [number, number, number][]): JQueryXHR;
 
     /**
      * Solver.solve is an alias of Solver().

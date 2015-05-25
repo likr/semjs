@@ -11,7 +11,7 @@ module.exports = ->
         n: n
         alpha: alpha
         sigma: sigma
-        sigmaFixed: sigmaFixed
+        sigma_fixed: sigmaFixed
         S: s
       contentType: 'application/json'
 
